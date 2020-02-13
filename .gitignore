@@ -4,10 +4,11 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
 settings.py
-static
-/env
+env
+env/
+media
+static/
  
 # Backup files # 
 *.bak 
