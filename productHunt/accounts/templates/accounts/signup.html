@@ -2,4 +2,29 @@
 
 {% block content %}
 <h1>sign up </h1>
+
+{% if error%}
+
+<h6>{{error}}<h6>
+<br/>
+<br/>
+{% endif %}
+
+<form method='POST' action ="{% url 'signup' %}">
+{% csrf_token %}
+username:
+</br>
+<input type="text" name="username"/>
+</br>
+password:
+<br/>
+<input type="password" name="password1"/>
+<br/>
+confirm password:
+<br/>
+<input type="password" name= "password2"/>
+<br/>
+<br/>
+<input class="btn btn-primary" type= "submit" value="sign up!"/>
+</from>
 {% endblock content %}
