@@ -11,7 +11,7 @@ def signup(request):
              user=User.objects.get(username=request.POST['username'])
              return render(request,'accounts/signup.html',{'error':'username has been taken'})
          except User.DoesNotExist:
-             user= User.objects.create_user(username = request.POST['username'],password=request.POST['password1'])
+             user= User.objects.create_user(username =request.POST['username'],password=request.POST['password1'])
              auth.login(request,user)
              #return redirect('home')
              #print("fuck")
@@ -38,4 +38,4 @@ def logout(request):
         auth.logout(request)
         return render(request,'accounts/login.html')  
     else:
-        return render(request,'accounts/login.html')   
+        return render(request,'products/home.html')   
