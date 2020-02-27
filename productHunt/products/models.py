@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
+
+
+
 class Product(models.Model):
     title = models.CharField(max_length=200)
     url = models.TextField()
@@ -16,3 +19,8 @@ class Product(models.Model):
 
     def summary(self):
         return self.body[:100]    
+
+
+class Vote(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)

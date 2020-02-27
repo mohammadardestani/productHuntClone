@@ -9,6 +9,9 @@ env
 env/
 media
 static/
+#images/
+images
+
  
 # Backup files # 
 *.bak 
